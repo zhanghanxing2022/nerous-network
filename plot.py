@@ -1,16 +1,30 @@
 import os.path
 
 import numpy as np
+import pandas as pd
 
 from NetWork import *
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+root = "./test/2/"
 a = Model()
-a.load_model("./test/final/model.h5")
-path = "./test/final/pict/"
+a.load_model(root + "model.h5")
+path = root + "pict/"
 if not os.path.exists(path):
     os.mkdir(path)
+acc = pd.read_csv(root + "acc.csv")
+print(acc)
+acc = pd.DataFrame(acc, columns=['accuracy'])
+fig = acc.plot()
+plt.show()
+fig.figure.savefig(path + "acc.jpg")
+loss = pd.read_csv(root + "loss.csv")
+print(loss)
+losslist = pd.DataFrame(loss, columns=['loss'])
+fig = losslist.plot()
+plt.show()
+fig.figure.savefig(path + "loss.jpg")
+
 layer = a.layer
 for item in layer:
     if item.layer == 'Dense':
