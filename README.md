@@ -3,6 +3,8 @@
 [TOC]
 
 This is a simple neural network based on numpy constructed by myeslf.It maybe very rough.
+本项目与以下链接对应项目的作者相同<br><strong>
+https://github.com/yangfan909/a_simple_NeuralNetwork_based_on_numpy.git <strong>
 ## 目标
 
 <font size = 20>仿照keras建造一个初步的神经网络架构。它将包括</font><br>
